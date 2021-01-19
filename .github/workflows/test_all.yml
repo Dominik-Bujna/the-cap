@@ -51,6 +51,6 @@ jobs:
       - name: Test Go
         run: go test -v ./tennis_test.go
 
-  test-docker-imageprocessing:
+  # test-docker-imageprocessing:
 
-  test-webui:
+  # test-webui:
