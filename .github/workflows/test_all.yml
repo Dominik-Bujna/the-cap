@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ImageProcessing/API_server
+        working-directory: ImageProcessing/Combination/API_server/
     steps:
       - uses: actions/checkout@v2
       #Test go code
