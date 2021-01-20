@@ -56,12 +56,14 @@ jobs:
     defaults:
       run:
         working-directory: ImageProcessing
-    image: Dockerfile
-    steps:
-      - run: |
-          echo This job does specify a container.
-          echo It runs in the container instead of the VM.
-        name: Run in container
+    runs:
+      using: "docker"
+      image: "Dockerfile"
+    # steps:
+    #   - run: |
+    #       echo This job does specify a container.
+    #       echo It runs in the container instead of the VM.
+    #     name: Run in container
   #   runs-on: ubuntu-latest
   #   defaults:
   #     run:
