@@ -55,12 +55,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run box version
+      - name: build
         uses: docker/build-push-action@v2
         with:
           context: ./
           file: ./Dockerfile
-          args: run --name yolo -p 127.0.0.1:8070:8070 -it -e DISPLAY=MY_IP:0.0 --gpus all --rm yologpu:0.1 ./darknet detector demo cfg/coco.data cfg/yolov4.cfg yolov4.weights https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4 -i 0 -json_port 8070
+          # args: run --name yolo -p 127.0.0.1:8070:8070 -it -e DISPLAY=MY_IP:0.0 --gpus all --rm yologpu:0.1 ./darknet detector demo cfg/coco.data cfg/yolov4.cfg yolov4.weights https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4 -i 0 -json_port 8070
 
     # runs-on: ubuntu-latest
     # defaults:
