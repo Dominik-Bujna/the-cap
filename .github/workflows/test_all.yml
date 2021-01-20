@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ImageProcessing/Combination/API_server/
+        working-directory: ImageProcessing/Combination/API_server
     steps:
       - uses: actions/checkout@v2
       #Test go code
@@ -53,6 +53,9 @@ jobs:
 
   test-docker-imageprocessing:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ImageProcessing/Combination
     steps:
       - uses: actions/checkout@v2
       - name: build
@@ -95,7 +98,7 @@ jobs:
         working-directory: WebUI/the-cap-web
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v1
       - run: npm ci
       - run: npm run test:prod
@@ -108,7 +111,7 @@ jobs:
         working-directory: WebUI/GCS_uploads_nodeJS_server
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v1
       - run: npm ci
       - run: npm install
